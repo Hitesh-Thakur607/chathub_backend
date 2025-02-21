@@ -6,7 +6,7 @@ import cors from "cors";
 // import mongoose from "mongoose";
 // import { string } from "prop-types";
 import userRouter from "./routes/user.js"
-import taskrouter from "./routes/task.js"
+// import taskrouter from "./routes/task.js"
 import {connectdb} from "./data/database.js"
 import bodyParser from 'body-parser';
 
