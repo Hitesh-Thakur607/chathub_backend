@@ -54,11 +54,11 @@ export const getuserdetails = (req, res,next) => {
     next(error);
   }
 
-  // } catch (error) {
-  //   res.status(403).json({
-  //     success: false,
-  //     message: "Invalid token",
-  //   });
+  } catch (error) {
+    res.status(403).json({
+      success: false,
+      message: "Invalid token",
+    });
 };
 export const logout = (req, res,next) => {
   try {
