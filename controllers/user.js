@@ -60,24 +60,24 @@ export const getuserdetails = (req, res,next) => {
       message: "Invalid token",
     });
 };
-export const logout = (req, res,next) => {
+export const logout = (req, res, next) => {
   try {
     res
-    .status(200)
-    .cookie("token", "", {
-      expires: new Date(Date.now()),
-      samesite:process.env.NODE_ENV==="DEVELOPMENT"?"lax":none,
-      secure:process.env.NODE_ENV==="DEVELOPMENT"?false:true
-    }) 
-    .json({
-      success: true,
-      user: req.user,
-    });
+      .status(200)
+      .cookie("token", "", {
+        expires: new Date(Date.now()),
+        samesite: process.env.NODE_ENV === "DEVELOPMENT" ? "lax" : "none",  // FIXED
+        secure: process.env.NODE_ENV === "DEVELOPMENT" ? false : true,
+      })
+      .json({
+        success: true,
+        user: req.user,
+      });
   } catch (error) {
     next(error);
   }
-
 };
+
 
 //   export const updateuser=async (req, res) => {
 //     //   const {id} = req.params;
